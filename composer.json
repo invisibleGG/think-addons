@@ -1,0 +1,23 @@
+{
+    "name": "coming/think-addons",
+    "description": "The ThinkPHP5.1 Addons Package",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "pubg",
+            "email": "root@bug-maker.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "topthink/framework": "5.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "think\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    }
+}
