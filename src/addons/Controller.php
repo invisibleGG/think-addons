@@ -1,12 +1,12 @@
 <?php
 // +----------------------------------------------------------------------
-// | thinkphp5 Addons [ WE CAN DO IT JUST THINK IT ]
+// | thinkphp5.1.* Addons [ WE CAN DO IT JUST THINK IT ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2016 http://www.zzstudio.net All rights reserved.
+// | Copyright (c) 2019 https://ffz.takeup.me All rights reserved.
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: Byron Sampson <xiaobo.sun@qq.com>
+// | Author: 猪在天上飞 <root@bug-maker.com>
 // +----------------------------------------------------------------------
 namespace think\addons;
 

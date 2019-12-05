@@ -1,10 +1,10 @@
 {
     "name": "coming/think-addons",
-    "description": "The ThinkPHP5.1 Addons Package",
+    "description": "The ThinkPHP5.1.* Addons Package",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "pubg",
+            "name": "pgfsky",
             "email": "root@bug-maker.com"
         }
     ],
