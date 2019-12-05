@@ -127,24 +127,24 @@ Hook::add('app_init', function () {
     }
     config('addons', $config);
     // 获取系统配置
-    $data = App::isDebug() ? [] : Cache::get('hooks', []);
-    $config = config('addons');
-    $addons = isset($config['hooks']) ? $config['hooks'] : [];
-    if (empty($data)) {
-        // 初始化钩子
-        foreach ($addons as $key => $values) {
-            if (is_string($values)) {
-                $values = explode(',', $values);
-            } else {
-                $values = (array)$values;
-            }
-            $addons[$key] = array_filter(array_map('get_addons_class', $values));
-            Hook::add($key, $addons[$key]);
-        }
-        cache('hooks', $addons);
-    } else {
-        Hook::import($data, false);
-    }
+    // $data = App::isDebug() ? [] : Cache::get('hooks', []);
+    // $config = config('addons');
+    // $addons = isset($config['hooks']) ? $config['hooks'] : [];
+    // if (empty($data)) {
+    //     // 初始化钩子
+    //     foreach ($addons as $key => $values) {
+    //         if (is_string($values)) {
+    //             $values = explode(',', $values);
+    //         } else {
+    //             $values = (array)$values;
+    //         }
+    //         $addons[$key] = array_filter(array_map('get_addons_class', $values));
+    //         Hook::add($key, $addons[$key]);
+    //     }
+    //     cache('hooks', $addons);
+    // } else {
+    //     Hook::import($data, false);
+    // }
 });
 
 // 闭包初始化行为
