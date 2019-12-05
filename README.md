@@ -13,6 +13,7 @@ The ThinkPHP 5.1 Addons Package
         "url": "https://github.com/invisibleGG/think-addons.git"
     }],
 ```
+之后执行命令来安装
 > composer update
 
 ## 配置
