@@ -44,7 +44,7 @@ return [
 > 在addons目录中创建test目录
 
 ### 创建钩子实现类
-> 在test目录中创建 Widget.php 类文件。注意：类文件首字母需大写
+> 在test目录中创建 site.php 类文件。注意：类文件首字母需大写
 
 ```
 <?php
@@ -56,7 +56,7 @@ use think\Addons;
  * 插件测试
  * @author coming
  */
-class Widget extends Addons	// 需继承think\addons\Addons类
+class site extends Addons	// 需继承think\addons\Addons类
 {
 	// 该插件的基础信息
     public $info = [
