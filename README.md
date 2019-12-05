@@ -2,7 +2,18 @@
 The ThinkPHP 5.1 Addons Package
 
 ## 安装
-> composer require coming/think-addons:dev-master
+在composer.json的require中添加
+```
+"coming/think-addons": "dev-master"
+```
+以及在composer.json中添加
+```
+"repositories": [{
+        "type": "git",
+        "url": "https://github.com/invisibleGG/think-addons.git"
+    }],
+```
+> composer update
 
 ## 配置
 ### 公共配置
@@ -97,7 +108,7 @@ class site extends Addons	// 需继承think\addons\Addons类
 		// 当前插件的配置信息，配置信息存在当前目录的config.php文件中，见下方
         print_r($this->getConfig());
 		// 可以返回模板，模板文件默认读取的为插件目录中的文件。模板名不能为空！
-        return $this->fetch('info');
+        return $this->fetch('site/info');
     }
 
 }
@@ -143,7 +154,7 @@ test为插件名，Action为controller中的类名[多级控制器可以用.分�
 <?php
 namespace addons\test\controller;
 
-class Index
+class Action
 {
     public function link()
     {
@@ -198,9 +209,10 @@ tp5
  --- view
  ---- action
  ----- link.html
+ ---- site
+ ----- info.html
  --- config.php
- --- info.html
- --- Test.php
+ --- site.php
  - application
  - config
  - thinkphp
