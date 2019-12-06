@@ -23,7 +23,7 @@ The ThinkPHP 5.1 Addons Package
     // 是否自动读取取插件钩子配置信息（默认是关闭）
     'autoload' => false,
     // 当关闭自动获取配置时需要手动配置hooks信息
-    'type'      => "file", //当当autoload为true时可选则file或者database，database时将向数据库中查询对应钩子
+    'type'      => "file", //当当autoload为true时可选则file或者database，database时将向数据库中查询对应钩子（待完成）
     'hooks' => [
 	    // 可以定义多个钩子
         'testhook'=>'test' // 键为钩子名称，用于在业务中自定义钩子处理，值为实现该钩子的插件，
