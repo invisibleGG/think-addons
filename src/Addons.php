@@ -11,12 +11,12 @@
 namespace think;
 
 // use think\facade\Env;
-use think\addons\Controller;
+use think\Controller;
 
 /**
  * 插件基类
  * Class Addns
- * @author Byron Sampson <xiaobo.sun@qq.com>
+ * @author coming <root@bug-maker.com>
  * @package think\addons
  */
 abstract class Addons extends Controller
