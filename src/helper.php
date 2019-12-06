@@ -162,7 +162,12 @@ Hook::add('action_begin', function () {
                 $values = (array)$values;
             }
             $addons[$key] = array_filter(array_map('get_addons_class', $values));
+            
             Hook::add($key, $addons[$key]);
+            // 注册意义对应的钩子
+            foreach ($values as $key2 => $value2) {
+                Hook::add($key."@".$value2,[$addons[$key][$key2],$key]);
+            }
         }
         cache('hooks', $addons);
     } else {

@@ -23,6 +23,7 @@ The ThinkPHP 5.1 Addons Package
     // 是否自动读取取插件钩子配置信息（默认是关闭）
     'autoload' => false,
     // 当关闭自动获取配置时需要手动配置hooks信息
+    'type'      => "file", //当当autoload为true时可选则file或者database，database时将向数据库中查询对应钩子
     'hooks' => [
 	    // 可以定义多个钩子
         'testhook'=>'test' // 键为钩子名称，用于在业务中自定义钩子处理，值为实现该钩子的插件，
@@ -184,18 +185,21 @@ class Action extends Controller
 ## 使用钩子
 > 创建好插件后就可以在正常业务中使用该插件中的钩子了
 > 使用钩子的时候第二个参数可以省略
+> 使用钩子可以指定两种方式，当执行指定插件的钩子时可在参数中添加@
 
 ### 模板中使用钩子
 
 ```
 <div>{:hook('testhook', ['id'=>1])}</div>
+<div>{:hook('testhook@test', ['id'=>1])}</div>
 ```
 
 ### php业务中使用
 > 只要是thinkphp5.1正常流程中的任意位置均可以使用
 
 ```
-hook('testhook', ['id'=>1])
+hook('testhook', ['id'=>1]) //集中执行，所有插件的testhook都执行
+hook('testhook@test', ['id'=>1]) //单一执行，只执行指定插件的testhook 
 ```
 
 ## 插件目录结构
