@@ -190,17 +190,16 @@ function hook($hook, $params = [])
 {
     $result = Hook::listen($hook, $params);
     if (is_array($result)) {
-        if (sizeof($result) > 1) {
-            foreach ($result as &$item) {
-                if ($item instanceof \think\response\View) {
-                    $item = $item->getContent();
-                }
+        foreach ($result as &$item) {
+            if ($item instanceof \think\response\View) {
+                $item = $item->getContent();
             }
-            $result = join(PHP_EOL, $result);
-        }else{
-            $result = $result[0];
         }
-        
+        $result = join(PHP_EOL, $result);
+    } else {
+        if ($result instanceof \think\response\View) {
+            $result = $result->getContent();
+        }
     }
     return $result;
 }
