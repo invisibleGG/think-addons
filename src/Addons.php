@@ -19,7 +19,8 @@ use think\Controller;
  * @author coming <root@bug-maker.com>
  * @package think\addons
  */
-abstract class Addons extends Controller
+// abstract class Addons extends Controller
+abstract class Addons
 {
     // 当前错误信息
     protected $error;
@@ -28,7 +29,7 @@ abstract class Addons extends Controller
      * $info = [
      *  'name'          => 'Test',
      *  'title'         => '测试插件',
-     *  'description'   => '用于thinkphp5的插件扩展演示',
+     *  'description'   => '用于thinkphp5.1的插件扩展演示',
      *  'status'        => 1,
      *  'author'        => '猪在天上飞',
      *  'version'       => '0.1'
