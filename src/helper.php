@@ -61,8 +61,10 @@ Route::group('addons', function () {
             $middleware = (array)$config[$type];
         }
         // 请求转入
-        Route::rule(':rule', "\\addons\\{$module}\\controller\\{$controller}@{$pathinfo[2]}")
-            ->middleware($middleware);
+        // Route::rule(':rule', "\\addons\\{$module}\\controller\\{$controller}@{$pathinfo[2]}")->middleware($middleware);
+        $controller2 = strtolower($controller);
+        $rule = "{$module}.{$controller2}/:rule";
+        Route::rule($rule, "\\addons\\{$module}\\controller\\{$controller}@{$pathinfo[2]}")->middleware($middleware);
     }
 })->middleware(function ($request, \Closure $next) {
     // 路由地址
