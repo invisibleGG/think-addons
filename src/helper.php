@@ -328,7 +328,13 @@ if (!function_exists('addons_url')) {
             $case = config('url_convert');
             $addons = $case ? Loader::parseName($url['scheme']) : $url['scheme'];
             $controller = $case ? Loader::parseName($url['host']) : $url['host'];
-            $action = trim($case ? strtolower($url['path']) : $url['path'], '/');
+            //$action = trim($case ? strtolower($url['path']) : $url['path'], '/');
+            $action = trim($url['path'],"/");
+            $dstr = preg_replace_callback('/([A-Z]+)/',function($matchs)
+            {
+                return '_'.strtolower($matchs[0]);
+            },$action);
+            $action = trim(preg_replace('/_{2,}/','_',$dstr),'_');
 
             /* 解析URL带的参数 */
             if (isset($url['query'])) {
